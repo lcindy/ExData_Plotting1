@@ -17,7 +17,7 @@ subset4<-as.numeric(levels(newdata[,4])[newdata[,4]])
 subsettime<-(strptime(paste(newdata[,1],newdata[,2]),"%d/%m/%Y %H:%M:%S"))
 #create graphs
 par(mfrow=c(2,2))
-par(mar=c(4,4,4,4))
+par(mar=c(4,4,3.5,2))
 #graph1
 plot(subsettime, subset1, type = "n",ylab ="Global Active Power",xlab="", cex.axis=0.5,cex.lab = 0.5 )
 lines(subsettime,subset1, lty=1)
@@ -29,7 +29,8 @@ plot(subsettime, subset3_1, type = "n",ylab ="Energy sub metering",xlab="", cex.
 lines(subsettime,subset3_1, lty=1)
 lines(subsettime,subset3_2, lty=1, col = "red")
 lines(subsettime,subset3_3, lty=1, col = "blue")
-legend("topright",legend=c("sub_metering_1","sub_metering_2","sub_metering_3"),col=c("black","red","blue"),lty=c(1,1,1),cex=0.3)
+legend("topright",legend=c("sub_metering_1","sub_metering_2","sub_metering_3"),col=c("black","red","blue"),lty=c(1,1,1),cex=0.5, pt.cex=1,box.col="transparent")
+box(lty = 'solid', col = 'black')
 #graph4
 plot(subsettime, subset4, type = "n",ylab ="Global_reactive_power",xlab="datetime", cex.axis=0.5,cex.lab = 0.5)
 #axis(2,cex.axis=0.5)
